@@ -1,0 +1,9 @@
+def merge_the_tools(string, k):
+    # your code goes here
+    for string_part in list(zip(*[iter(string)]*k)):
+        mydict = dict()
+        print("".join([mydict.setdefault(ele,ele) for ele in string_part if ele not in mydict]))
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
