@@ -1,0 +1,7 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import cmath
+complex_num_input = complex(input())
+r = abs(complex_num_input)
+phase = cmath.phase(complex_num_input)
+print(round(r,3))
+print(round(phase,3))
