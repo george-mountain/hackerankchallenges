@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+numShoes = int(input())
+shoe_size = Counter(map(int,input().split()))
+numCust = int(input())
+sumval = []
+
+for _ in range(numCust):
+    size,customer_price = list(map(int,input().rstrip().split()))
+    if shoe_size[size]:
+        sumval.append(customer_price)
+        shoe_size[size]-=1
+
+
+print(sum(sumval))
