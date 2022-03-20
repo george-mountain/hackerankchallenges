@@ -1,0 +1,6 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import calendar
+import datetime
+date = input()
+day = datetime.datetime.strptime(date,'%m %d %Y').weekday()
+print(calendar.day_name[day].upper())
