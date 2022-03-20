@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import permutations
+
+string,k = input().split()
+k = int(k)
+result = sorted(list(permutations(string,k)))
+res = ["".join(tup_element) for tup_element in result]
+for string in res:
+    print(string)
