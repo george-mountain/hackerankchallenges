@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+N = int(input())
+ordinary_dict = OrderedDict()
+for _ in range(N):
+    
+    (*item_name,price) = input().split()
+    item_name = " ".join(map(str,item_name))
+    if item_name in ordinary_dict.keys():
+        ordinary_dict[item_name] += int(price)
+    else:
+        ordinary_dict[item_name] = int(price)
+for name,qty in ordinary_dict.items():
+    print(name,qty)
