@@ -1,0 +1,14 @@
+n = int(input())
+s = set(map(int, input().split()))
+n_command = int(input())
+
+for _ in range(n_command):
+    ls = input().split()
+    if ls[0]=='pop':
+        s.pop()
+        print(s)
+    else:
+        eval('s.{}({})'.format(ls[0],ls[1]))
+        print(s)
+
+print(sum(s))
