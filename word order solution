@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import defaultdict
+res = defaultdict(list)
+n = int(input())
+for _ in range(n):
+    word = input()
+    res[word].append(word)
+print(len(res.keys()))
+for ele in res:
+    print(len(res[ele]),end=" ")
