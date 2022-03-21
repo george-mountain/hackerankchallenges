@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+AB = int(input())
+BC = int(input())
+degree_sign = u"\N{DEGREE SIGN}"
+
+"""
+Since M is the midpoint of the hypotenuse, then it divided the triangle into two similar isosceles triangles
+such that AM = MC = BM. This implies that angle at C is equal to the angle theta
+"""
+
+theta = math.degrees(math.atan2(AB,BC)) # since tan = opp/adj --> opp to theta is AB and adj is BC
+print(str(round(theta)) + degree_sign)
