@@ -1,0 +1,6 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+E_num = int(input())
+E_student = set(list(map(int,input().split())))
+F_num = int(input())
+F_student = set(list(map(int,input().split())))
+print(len(E_student.intersection(F_student)))
