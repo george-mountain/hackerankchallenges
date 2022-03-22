@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations as comb
+N = int(input())
+lower_case_letters = input().split()
+K = int(input())
+res = list(comb(lower_case_letters,K))
+filter_a_terms = list(filter(lambda x: 'a' in x,res))
+probability = len(filter_a_terms)/len(res)
+print(probability)
