@@ -1,0 +1,18 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import deque
+
+def check_cube(cube_list):
+    q = deque(cube_list)
+    while q:
+        value = q.pop() if q[-1] > q[0] else q.popleft()
+        if not q:
+            return "Yes"
+        if q[-1] > value or q[0] > value:
+            return "No"
+        
+
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    lis = list(map(int,input().split()))
+    print(check_cube(lis))
