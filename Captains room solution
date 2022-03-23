@@ -1,0 +1,6 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+K = int(input())
+elements = input().split()
+count = Counter(elements)
+print(count.most_common()[-1][0])
