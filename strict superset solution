@@ -1,0 +1,3 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+A = set(input().split())
+print(all([A.issuperset(set(input().split())) for _ in range(int(input()))]))
