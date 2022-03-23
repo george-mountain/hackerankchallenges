@@ -1,0 +1,8 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+x,k = input().split()
+P = input()
+P_mod = P.replace('x', '({})'.format(x))
+if eval(P_mod) == int(k):
+    print("True")
+else:
+    print("False")
