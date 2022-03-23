@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+values = []
+N,X = map(int,input().split())
+for _ in range(X):
+    student_mark = list(map(float,input().split()))
+    values.append(student_mark)
+zipped_mark = list(zip(*values))
+for marks in zipped_mark:
+    avg = sum(marks)/len(marks)
+    print(round(avg,1))
