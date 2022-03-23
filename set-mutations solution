@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+A_num = int(input())
+A_set = set(list(map(int,input().split())))
+N = int(input())
+for _ in range(N):
+    operation,l = input().split()
+    B_set = set(list(map(int,input().split())))
+    eval('A_set.{}({})'.format(operation,B_set))
+print(sum(A_set))
