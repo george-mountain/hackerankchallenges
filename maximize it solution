@@ -1,0 +1,8 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import product as pd
+
+K,M = map(int,input().split())
+N = (list(map(int,input().split()))[1:] for _ in range(K))
+
+res = list(map(lambda arr: sum(x**2 for x in arr)%M,pd(*N)))
+print(max(res))
