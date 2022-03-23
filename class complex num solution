@@ -1,0 +1,48 @@
+import math
+
+class Complex(object):
+    def __init__(self, real, imaginary):
+        self.re = real
+        self.img = imaginary
+        
+    def __add__(self, no):
+        add_val = Complex(self.re+no.re,self.img+no.img)
+        return add_val
+        
+    def __sub__(self, no):
+        sub_val = Complex(self.re-no.re,self.img-no.img)
+        return sub_val
+        
+    def __mul__(self, no):
+        mult_val = Complex(self.re*no.re - self.img*no.img,self.re*no.img + self.img*no.re)
+        return mult_val
+
+    def __truediv__(self, no):
+        den = no.re * no.re + no.img * no.img
+        div_val = Complex((self.re*no.re + self.img*no.img)/den,(self.img*no.re - self.re*no.img)/den)
+        return div_val
+
+    def mod(self):
+        mod_val = math.sqrt((self.re*self.re+self.img*self.img))
+        return "%.2f+0.00i" % (mod_val)
+
+    def __str__(self):
+        if self.img == 0:
+            result = "%.2f+0.00i" % (self.re)
+        elif self.re == 0:
+            if self.img >= 0:
+                result = "0.00+%.2fi" % (self.img)
+            else:
+                result = "0.00-%.2fi" % (abs(self.img))
+        elif self.img > 0:
+            result = "%.2f+%.2fi" % (self.re, self.img)
+        else:
+            result = "%.2f-%.2fi" % (self.re, abs(self.img))
+        return result
+
+if __name__ == '__main__':
+    c = map(float, input().split())
+    d = map(float, input().split())
+    x = Complex(*c)
+    y = Complex(*d)
+    print(*map(str, [x+y, x-y, x*y, x/y, x.mod(), y.mod()]), sep='\n')
