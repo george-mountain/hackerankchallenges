@@ -1,0 +1,4 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+N = int(input())
+N_list = input().split()
+print(all([int(ele)> 0 for ele in N_list]) and any([val == val[::-1] for val in N_list]))
