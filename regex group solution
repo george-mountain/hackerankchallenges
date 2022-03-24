@@ -1,0 +1,6 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+S = input()
+regex = r'([A-Za-z0-9])\1+'
+res = re.search(regex,S)
+print(res.group(1) if res else -1 )
