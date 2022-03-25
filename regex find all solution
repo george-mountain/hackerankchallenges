@@ -1,0 +1,7 @@
+import re
+vow = "aeiou"
+cons = "qwrtypsdfghjklzxcvbnm"
+S = input()
+reg_pattern = r'(?<=[%s])[%s]{2,}.*?(?=[%s])'%(cons,vow,cons)
+match = re.findall(reg_pattern,S,flags=re.IGNORECASE)
+print("\n".join(match or ["-1"]))
