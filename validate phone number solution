@@ -1,0 +1,6 @@
+import re
+N = int(input())
+regex = r'^[789]\d{9}$'
+for _ in range(N):
+  string = input()
+  print("YES" if re.match(regex,string) else "NO")
