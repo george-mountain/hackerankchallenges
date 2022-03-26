@@ -1,0 +1,4 @@
+import numpy as np
+shap = tuple(map(int,input().split()))
+print(np.zeros( shap , dtype=np.int64))
+print(np.ones( shap , dtype=np.int64))
