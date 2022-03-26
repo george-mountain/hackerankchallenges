@@ -1,0 +1,5 @@
+import numpy as np
+N,M,P = map(int,input().split())
+Narray = np.array([input().split() for _ in range(N)],int)
+Parray = np.array([input().split() for _ in range(M)],int)
+print(np.concatenate((Narray,Parray)))
