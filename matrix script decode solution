@@ -1,0 +1,16 @@
+import re
+
+first_multiple_input = input().rstrip().split()
+
+n = int(first_multiple_input[0])
+
+m = int(first_multiple_input[1])
+
+matrix = []
+
+for _ in range(n):
+    matrix_item = input()
+    matrix.append(matrix_item)
+res = "".join([elem for sublist in zip(*matrix) for elem in sublist])
+regex = r'\b[^a-zA-Z0-9]+\b' #search the word where there is repetion of non-alpahanumeric
+print(re.sub(regex," ",res))
