@@ -1,0 +1,10 @@
+import numpy as np
+N,M = map(int,input().split())
+Narray = np.array([input().split() for _ in range(N)],int)
+Marray = np.array([input().split() for _ in range(N)],int)
+print(np.add(Narray,Marray))
+print(np.subtract(Narray,Marray))
+print(np.multiply(Narray,Marray))
+print(Narray//Marray)
+print(np.mod(Narray,Marray))
+print(np.power(Narray,Marray))
