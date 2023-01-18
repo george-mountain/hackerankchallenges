@@ -1,0 +1,29 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def plusMinus(arr):
+    # Write your code here
+    pos_count, neg_count, zero_count = 0, 0, 0
+    n = len(arr)
+    for ele in arr:
+        if ele > 0:
+            pos_count += 1
+        elif ele < 0:
+            neg_count += 1
+        else:
+            zero_count += 1
+    print(round(pos_count/n, 6))
+    print(round(neg_count/n, 6))
+    print(round(zero_count/n, 6))
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
