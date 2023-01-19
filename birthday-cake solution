@@ -1,0 +1,29 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def birthdayCakeCandles(candles):
+    # Write your code here
+    max_count = 0
+    max_size = max(candles)
+    for size in candles:
+        if size == max_size:
+            max_count += 1
+    return max_count
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    candles_count = int(input().strip())
+
+    candles = list(map(int, input().rstrip().split()))
+
+    result = birthdayCakeCandles(candles)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
