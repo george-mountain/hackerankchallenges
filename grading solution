@@ -1,0 +1,13 @@
+def gradingStudents(grades):
+    # Write your code here
+    result = []
+    for grade in grades:
+        next_multiple_five = grade + (5 - grade % 5)
+        if next_multiple_five - grade < 3 and grade >= 38:
+            grade = next_multiple_five
+        elif grade < 38:
+            grade = grade
+        else:
+            grade = grade
+        result.append(grade)
+    return result
