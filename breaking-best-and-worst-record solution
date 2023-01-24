@@ -1,0 +1,36 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+def breakingRecords(scores):
+    # Write your code here
+    minimum, maximum = scores[0], scores[0]
+    min_count, max_count = 0, 0
+    for ele in scores:
+        if ele < minimum:
+            min_count += 1
+        elif ele > maximum:
+            max_count += 1
+        maximum = max(ele, maximum)
+        minimum = min(ele, minimum)
+    
+    return [max_count, min_count]
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    scores = list(map(int, input().rstrip().split()))
+
+    result = breakingRecords(scores)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
