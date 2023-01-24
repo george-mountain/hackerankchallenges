@@ -1,0 +1,35 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def getTotalX(a, b):
+    # Write your code here
+    result = 0
+    for nums in range(max(a),min(b)+1):
+        if all([1 if nums % ele == 0 else 0 for ele in a]) and all([1 if ele % nums == 0 else 0 for ele in b]):
+            result += 1
+    return result
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    first_multiple_input = input().rstrip().split()
+
+    n = int(first_multiple_input[0])
+
+    m = int(first_multiple_input[1])
+
+    arr = list(map(int, input().rstrip().split()))
+
+    brr = list(map(int, input().rstrip().split()))
+
+    total = getTotalX(arr, brr)
+
+    fptr.write(str(total) + '\n')
+
+    fptr.close()
