@@ -1,0 +1,27 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def pageCount(n, p):
+    # Write your code here
+    page_numbers = math.floor(n/2)
+    desired_page_number = math.floor(p/2)
+    exact_page_location = min(desired_page_number, page_numbers - desired_page_number)
+    return exact_page_location
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    p = int(input().strip())
+
+    result = pageCount(n, p)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
